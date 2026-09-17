@@ -1,37 +1,39 @@
-# %%
+
 import random
 def choose():
-    print("choose 1 for Rock")
-    print("choose 2 for Paper")
-    print("choose 3 for Scissors")
+    print("choose 1 for Rock     🪨")
+    print("choose 2 for Paper    📄")
+    print("choose 3 for Scissors ✂")
     print("\n------------------")
     choice=int(input("enter your choice:"))
     if choice==1:
-        return "Rock"
+        return "🪨"
     elif choice==2:
-        return "Paper"
+        return "📄"
     elif choice==3:
-        return "Scissors"
+        return "✂"
     else:
         print("enter only the given number")
 def retry():
     retrying=input("Do you want to play Again:")
+    print("-------------------------------------")
     if retrying =="yes" or retrying== "YES":
         game()
         
     else:
-        print("I Think You Dont Know How To Play! That why you are telling no ?")
+        print("I Think You Dont Know How To Play! That's why you are telling no ?")
  
 def game():
     
+    computer=random.randint(1,3)
     player=choose()
     computer=random.randint(1,3)
     if computer==1:
-        computer="Rock"
+        computer="🪨"
     elif computer ==2:
-        computer= "paper"
+        computer= "📄"
     else :
-        computer= "Scissors"
+        computer= "✂"
     print("\n--------------------")
     print("player:",player)
     print("computer:",computer)
@@ -41,7 +43,7 @@ def game():
         
         print("\n------------------")
         retry()
-    elif player=="Rock" and computer=="opaper":
+    elif player=="Rock" and computer=="Paper":
         print("you win!")
         print("\n------------------")
         retry()
@@ -49,17 +51,15 @@ def game():
         print("you win!")
         print("\n------------------")
         retry()
-    elif player=="Scissor" and computer=="paper":
+    elif player=="Scissor" and computer=="Rock":
         print("you win!")
         print("\n------------------")
         retry()
     
     else:
         
-        print("you loss!")
+        print("Computer Win!")
         print("\n------------------")
         retry()
 game()
 
-
-# %%
